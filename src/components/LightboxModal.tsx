@@ -30,6 +30,9 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
 
     window.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden"; // Prevent scrolling
+    
+    // Force scroll to top when lightbox opens
+    window.scrollTo(0, 0);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
@@ -54,13 +57,13 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
       <div className="flex items-center justify-center w-full h-full p-4">
         <button
           onClick={onPrev}
-          className="absolute left-4 p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white"
+          className="absolute left-4 p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white z-10"
           aria-label="Previous image"
         >
           <ArrowLeft size={24} />
         </button>
 
-        <div className="relative max-w-[90vw] max-h-[90vh]">
+        <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
           <img
             src={currentImage.src}
             alt={currentImage.alt}
@@ -74,7 +77,7 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
 
         <button
           onClick={onNext}
-          className="absolute right-4 p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white"
+          className="absolute right-4 p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white z-10"
           aria-label="Next image"
         >
           <ArrowRight size={24} />
