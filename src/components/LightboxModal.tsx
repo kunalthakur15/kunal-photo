@@ -1,0 +1,87 @@
+
+import React, { useEffect } from "react";
+import { GalleryImage } from "../data/galleryData";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
+
+interface LightboxModalProps {
+  images: GalleryImage[];
+  currentIndex: number;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+}
+
+const LightboxModal: React.FC<LightboxModalProps> = ({
+  images,
+  currentIndex,
+  onClose,
+  onNext,
+  onPrev,
+}) => {
+  const currentImage = images[currentIndex];
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") onNext();
+      if (e.key === "ArrowLeft") onPrev();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    };
+  }, [onClose, onNext, onPrev]);
+
+  if (!currentImage) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
+      <div className="absolute top-4 right-4 z-10">
+        <button
+          onClick={onClose}
+          className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white"
+          aria-label="Close"
+        >
+          <X size={24} />
+        </button>
+      </div>
+
+      <div className="flex items-center justify-center w-full h-full p-4">
+        <button
+          onClick={onPrev}
+          className="absolute left-4 p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white"
+          aria-label="Previous image"
+        >
+          <ArrowLeft size={24} />
+        </button>
+
+        <div className="relative max-w-[90vw] max-h-[90vh]">
+          <img
+            src={currentImage.src}
+            alt={currentImage.alt}
+            className="lightbox-image mx-auto"
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white text-center">
+            <p>{currentImage.alt}</p>
+            <p className="text-sm text-white/70">{currentIndex + 1} of {images.length}</p>
+          </div>
+        </div>
+
+        <button
+          onClick={onNext}
+          className="absolute right-4 p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white"
+          aria-label="Next image"
+        >
+          <ArrowRight size={24} />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default LightboxModal;
