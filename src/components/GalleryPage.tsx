@@ -25,6 +25,11 @@ const GalleryPage: React.FC = () => {
     return () => clearTimeout(timer);
   }, [categoryId]);
 
+  // Ensure the page is at the top when loading a gallery
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [categoryId]);
+
   if (!gallery) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -41,6 +46,8 @@ const GalleryPage: React.FC = () => {
   const handleImageClick = (index: number) => {
     setCurrentImageIndex(index);
     setLightboxOpen(true);
+    // Force scroll to top to ensure lightbox is visible
+    window.scrollTo(0, 0);
   };
 
   const handleNext = () => {
@@ -52,6 +59,21 @@ const GalleryPage: React.FC = () => {
   const handlePrev = () => {
     setCurrentImageIndex((prev) =>
       prev === 0 ? gallery.images.length - 1 : prev - 1
+    );
+  };
+
+  // Create a portal for the lightbox
+  const renderLightbox = () => {
+    if (!lightboxOpen) return null;
+
+    return (
+      <LightboxModal
+        images={gallery.images}
+        currentIndex={currentImageIndex}
+        onClose={() => setLightboxOpen(false)}
+        onNext={handleNext}
+        onPrev={handlePrev}
+      />
     );
   };
 
@@ -100,16 +122,8 @@ const GalleryPage: React.FC = () => {
         )}
       </div>
 
-      {/* Lightbox */}
-      {lightboxOpen && (
-        <LightboxModal
-          images={gallery.images}
-          currentIndex={currentImageIndex}
-          onClose={() => setLightboxOpen(false)}
-          onNext={handleNext}
-          onPrev={handlePrev}
-        />
-      )}
+      {/* Lightbox - rendered at the end to ensure proper stacking */}
+      {renderLightbox()}
 
       {/* Footer */}
       <footer className="py-12 bg-gray-100">
