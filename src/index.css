@@ -191,9 +191,28 @@
   @apply opacity-0;
 }
 
+/* Slide in from right animation */
+.slide-in-right {
+  animation: slideInFromRight 0.4s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Full screen image transition */
 .lightbox-image {
-  @apply max-h-[85vh] max-w-full object-contain transition-all duration-300;
+  max-height: 85vh;
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 /* Navigation arrows */

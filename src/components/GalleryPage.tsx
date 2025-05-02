@@ -5,6 +5,7 @@ import { galleryCategories } from "../data/galleryData";
 import MasonryGallery from "./MasonryGallery";
 import LightboxModal from "./LightboxModal";
 import { ChevronLeft } from "lucide-react";
+import NavigationBar from "./NavigationBar";
 
 const GalleryPage: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -56,6 +57,9 @@ const GalleryPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <NavigationBar />
+      
       {/* Header Banner */}
       <div 
         className="relative h-[40vh] bg-cover bg-center"
@@ -63,8 +67,8 @@ const GalleryPage: React.FC = () => {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">{gallery.title}</h1>
-          <p className="text-xl opacity-90 max-w-2xl text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 font-playfair">{gallery.title}</h1>
+          <p className="text-xl opacity-90 max-w-2xl text-center px-4 font-montserrat">
             {gallery.description}
           </p>
         </div>
@@ -74,7 +78,7 @@ const GalleryPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-6">
         <Link 
           to="/" 
-          className="inline-flex items-center text-gray-700 hover:text-black transition-colors"
+          className="inline-flex items-center text-gray-700 hover:text-black transition-colors font-montserrat"
         >
           <ChevronLeft size={20} />
           <span>Back to collections</span>
@@ -86,7 +90,7 @@ const GalleryPage: React.FC = () => {
         {isLoading ? (
           <div className="py-20 text-center">
             <div className="inline-block w-8 h-8 border-4 border-gray-300 border-t-gray-800 rounded-full animate-spin"></div>
-            <p className="mt-4 text-gray-600">Loading gallery...</p>
+            <p className="mt-4 text-gray-600 font-montserrat">Loading gallery...</p>
           </div>
         ) : (
           <MasonryGallery 
@@ -110,7 +114,7 @@ const GalleryPage: React.FC = () => {
       {/* Footer */}
       <footer className="py-12 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-600">© 2025 Photography Portfolio. All rights reserved.</p>
+          <p className="text-gray-600 font-montserrat">© 2025 Photography Portfolio. All rights reserved.</p>
         </div>
       </footer>
     </div>

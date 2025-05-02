@@ -64,7 +64,7 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
           <img
             src={currentImage.src}
             alt={currentImage.alt}
-            className="lightbox-image mx-auto"
+            className="object-contain max-h-[85vh] max-w-full"
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white text-center">
             <p>{currentImage.alt}</p>
