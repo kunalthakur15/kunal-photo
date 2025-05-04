@@ -67,7 +67,7 @@ const ImageSlider: React.FC = () => {
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent text-white z-10">
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">Capturing Moments</h1>
+        <h1 className="font-allura text-3xl sm:text-5xl md:text-6xl font-bold mb-1 sm:mb-2">Capturing Moments</h1>
         <p className="text-base sm:text-xl opacity-90">Explore breathtaking photography from around the world</p>
       </div>
 

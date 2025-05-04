@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				'playfair': ['Playfair Display', 'serif'],
 				'montserrat': ['Montserrat', 'sans-serif'],
+				'allura': ['Allura', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

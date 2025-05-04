@@ -18,23 +18,23 @@ const NavigationBar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="font-playfair text-xl sm:text-2xl font-bold text-gray-800">
+            <Link to="/" className="font-allura text-3xl sm:text-4xl font-bold text-gray-800">
               Photo Journal
             </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className={`font-playfair ${isActive("/")} hover:text-black transition-colors duration-200`}>
+            <Link to="/" className={`font-allura text-xl ${isActive("/")} hover:text-black transition-colors duration-200`}>
               Home
             </Link>
-            <Link to="/about" className={`font-playfair ${isActive("/about")} hover:text-black transition-colors duration-200`}>
+            <Link to="/about" className={`font-allura text-xl ${isActive("/about")} hover:text-black transition-colors duration-200`}>
               About Me
             </Link>
-            <Link to="/#galleries" className="font-playfair text-gray-600 hover:text-black transition-colors duration-200">
+            <Link to="/#galleries" className="font-allura text-xl text-gray-600 hover:text-black transition-colors duration-200">
               Galleries
             </Link>
-            <Link to="/contact" className={`font-playfair ${isActive("/contact")} hover:text-black transition-colors duration-200`}>
+            <Link to="/contact" className={`font-allura text-xl ${isActive("/contact")} hover:text-black transition-colors duration-200`}>
               Contact
             </Link>
           </div>
@@ -57,28 +57,28 @@ const NavigationBar: React.FC = () => {
             <div className="flex flex-col space-y-2 py-2 bg-white/95 rounded-md shadow-lg">
               <Link 
                 to="/" 
-                className={`font-playfair text-center py-2 ${isActive("/")} hover:text-black transition-colors duration-200`}
+                className={`font-allura text-xl text-center py-2 ${isActive("/")} hover:text-black transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/about" 
-                className={`font-playfair text-center py-2 ${isActive("/about")} hover:text-black transition-colors duration-200`}
+                className={`font-allura text-xl text-center py-2 ${isActive("/about")} hover:text-black transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Me
               </Link>
               <Link 
                 to="/#galleries" 
-                className="font-playfair text-center py-2 text-gray-600 hover:text-black transition-colors duration-200"
+                className="font-allura text-xl text-center py-2 text-gray-600 hover:text-black transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Galleries
               </Link>
               <Link 
                 to="/contact" 
-                className={`font-playfair text-center py-2 ${isActive("/contact")} hover:text-black transition-colors duration-200`}
+                className={`font-allura text-xl text-center py-2 ${isActive("/contact")} hover:text-black transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
