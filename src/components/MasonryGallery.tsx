@@ -1,7 +1,7 @@
-
 import React from "react";
 import { GalleryImage } from "../data/galleryData";
 import GalleryItem from "./GalleryItem";
+import { useIsMobile } from "../hooks/use-mobile";
 
 interface MasonryGalleryProps {
   images: GalleryImage[];
@@ -9,7 +9,25 @@ interface MasonryGalleryProps {
 }
 
 const MasonryGallery: React.FC<MasonryGalleryProps> = ({ images, onImageClick }) => {
-  // Split images into two columns for a basic masonry layout
+  const isMobile = useIsMobile();
+  
+  // For mobile view, maybe use a different layout (still a grid but with different spacing)
+  if (isMobile) {
+    return (
+      <div className="grid grid-cols-1 gap-3">
+        {images.map((image, index) => (
+          <div key={image.id} className="scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+            <GalleryItem 
+              image={image} 
+              onClick={() => onImageClick(index)}
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // For desktop, keep the two-column masonry layout
   const leftColumnImages = images.filter((_, index) => index % 2 === 0);
   const rightColumnImages = images.filter((_, index) => index % 2 === 1);
 

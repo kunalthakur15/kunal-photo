@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { sliderImages } from "../data/galleryData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const ImageSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useIsMobile();
 
   // Auto-advance the slider
   useEffect(() => {
@@ -30,7 +32,7 @@ const ImageSlider: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden">
       {sliderImages.map((image, index) => (
         <div
           key={image.id}
@@ -47,35 +49,35 @@ const ImageSlider: React.FC = () => {
         </div>
       ))}
       
-      <div className="absolute inset-0 flex items-center justify-between p-4">
+      <div className="absolute inset-0 flex items-center justify-between p-2 sm:p-4">
         <button
           onClick={goToPrevSlide}
           className="nav-arrow z-10"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={isMobile ? 18 : 24} />
         </button>
         <button
           onClick={goToNextSlide}
           className="nav-arrow z-10"
           aria-label="Next slide"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={isMobile ? 18 : 24} />
         </button>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent text-white z-10">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">Capturing Moments</h1>
-        <p className="text-xl opacity-90">Explore breathtaking photography from around the world</p>
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent text-white z-10">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">Capturing Moments</h1>
+        <p className="text-base sm:text-xl opacity-90">Explore breathtaking photography from around the world</p>
       </div>
 
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 flex justify-center gap-1 sm:gap-2">
         {sliderImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentIndex ? "w-8 bg-white" : "bg-white/50"
+            className={`h-2 rounded-full transition-all ${
+              index === currentIndex ? "w-6 sm:w-8 bg-white" : "w-2 bg-white/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

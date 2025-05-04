@@ -1,6 +1,7 @@
 
 import React from "react";
 import { GalleryImage } from "../data/galleryData";
+import { useIsMobile } from "../hooks/use-mobile";
 
 interface GalleryItemProps {
   image: GalleryImage;
@@ -8,6 +9,8 @@ interface GalleryItemProps {
 }
 
 const GalleryItem: React.FC<GalleryItemProps> = ({ image, onClick }) => {
+  const isMobile = useIsMobile();
+  
   return (
     <div 
       className="gallery-item cursor-pointer"
@@ -34,8 +37,10 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onClick }) => {
           loading="lazy"
         />
         <div className="gallery-item-overlay absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 flex items-center justify-center">
-          <div className="p-4 text-white text-center">
-            <span className="text-sm opacity-75">Click to enlarge</span>
+          <div className="p-3 sm:p-4 text-white text-center">
+            <span className={`${isMobile ? 'text-xs' : 'text-sm'} opacity-75`}>
+              {isMobile ? 'Tap to view' : 'Click to enlarge'}
+            </span>
           </div>
         </div>
       </div>

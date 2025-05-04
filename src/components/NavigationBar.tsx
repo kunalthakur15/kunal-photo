@@ -13,12 +13,12 @@ const NavigationBar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm py-4 sticky top-0 z-30 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white/90 backdrop-blur-sm py-2 sm:py-4 sticky top-0 z-30 shadow-sm">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="font-playfair text-2xl font-bold text-gray-800">
+            <Link to="/" className="font-playfair text-xl sm:text-2xl font-bold text-gray-800">
               Photo Journal
             </Link>
           </div>
@@ -43,7 +43,8 @@ const NavigationBar: React.FC = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+              className="text-gray-600 hover:text-gray-900 focus:outline-none p-1"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               <Menu size={24} />
             </button>
@@ -52,8 +53,8 @@ const NavigationBar: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 scale-in">
-            <div className="flex flex-col space-y-4 py-3">
+          <div className="md:hidden mt-2 scale-in">
+            <div className="flex flex-col space-y-2 py-2 bg-white/95 rounded-md shadow-lg">
               <Link 
                 to="/" 
                 className={`font-playfair text-center py-2 ${isActive("/")} hover:text-black transition-colors duration-200`}
