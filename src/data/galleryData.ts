@@ -1,10 +1,12 @@
-
 export interface GalleryImage {
-  id: number;
-  src: string;
+  id: number | string;
+  src?: string;
+  fileId?: string;
+  lightboxSrc?: string;
   alt: string;
   width: number;
   height: number;
+  name?: string;
 }
 
 export interface GalleryCategory {
@@ -176,20 +178,28 @@ export const sliderImages = [
     id: 1,
     src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
     alt: "Body of water surrounded by trees",
+    width: 1200,
+    height: 800
   },
   {
     id: 2,
     src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
     alt: "Mountain hit by sun rays",
+    width: 1200,
+    height: 900
   },
   {
     id: 3,
     src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
     alt: "Ocean wave at beach",
+    width: 1200,
+    height: 900
   },
   {
     id: 4,
     src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
     alt: "Snowy mountain peak",
-  },
+    width: 1200,
+    height: 800
+  }
 ];

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import NavigationBar from "../components/NavigationBar";
 import { toast } from "sonner";
@@ -127,7 +126,7 @@ const Contact: React.FC = () => {
             </form>
           </div>
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in" style={{ animationDelay: "0.5s" }}>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 fade-in" style={{ animationDelay: "0.5s" }}>
             <div className="text-center p-6 hover:shadow-lg transition-shadow rounded-lg">
               <div className="text-indigo-500 mb-4">
                 <svg className="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -135,20 +134,10 @@ const Contact: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold font-playfair mb-2">Email</h3>
-              <p className="text-gray-600">contact@photojournal.com</p>
+              <p className="text-gray-600">kunalthakur15@gmail.com</p>
             </div>
             
             <div className="text-center p-6 hover:shadow-lg transition-shadow rounded-lg">
-              <div className="text-indigo-500 mb-4">
-                <svg className="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-playfair mb-2">Phone</h3>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
-            </div>
-            
-            <div className="text-center p-6 hover:shadow-lg transition-shadow rounded-lg md:col-span-2 lg:col-span-1">
               <div className="text-indigo-500 mb-4">
                 <svg className="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -156,7 +145,7 @@ const Contact: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold font-playfair mb-2">Location</h3>
-              <p className="text-gray-600">San Francisco, California</p>
+              <p className="text-gray-600">Noida, India</p>
             </div>
           </div>
         </div>

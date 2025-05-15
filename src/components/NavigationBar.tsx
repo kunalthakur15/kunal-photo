@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -26,13 +25,10 @@ const NavigationBar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className={`font-allura text-xl ${isActive("/")} hover:text-black transition-colors duration-200`}>
-              Home
+              Galleries
             </Link>
             <Link to="/about" className={`font-allura text-xl ${isActive("/about")} hover:text-black transition-colors duration-200`}>
               About Me
-            </Link>
-            <Link to="/#galleries" className="font-allura text-xl text-gray-600 hover:text-black transition-colors duration-200">
-              Galleries
             </Link>
             <Link to="/contact" className={`font-allura text-xl ${isActive("/contact")} hover:text-black transition-colors duration-200`}>
               Contact
@@ -60,7 +56,7 @@ const NavigationBar: React.FC = () => {
                 className={`font-allura text-xl text-center py-2 ${isActive("/")} hover:text-black transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Galleries
               </Link>
               <Link 
                 to="/about" 
@@ -68,13 +64,6 @@ const NavigationBar: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Me
-              </Link>
-              <Link 
-                to="/#galleries" 
-                className="font-allura text-xl text-center py-2 text-gray-600 hover:text-black transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Galleries
               </Link>
               <Link 
                 to="/contact" 

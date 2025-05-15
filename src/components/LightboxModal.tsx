@@ -1,5 +1,5 @@
-
 import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { GalleryImage } from "../data/galleryData";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
@@ -48,9 +48,10 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
 
   if (!currentImage) return null;
 
-  return (
+  // Render the modal in a portal to ensure it's above all other content
+  return createPortal(
     <div 
-      className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center" 
+      className="fixed inset-0 z-[99999] bg-black/95 flex items-center justify-center" 
       style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
     >
       <div className={`absolute ${isMobile ? 'top-2 right-2' : 'top-4 right-4'} z-[10000]`}>
@@ -76,7 +77,7 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
         {/* Image container - adjusted for mobile */}
         <div className="flex items-center justify-center max-w-[95vw] max-h-[95vh]">
           <img
-            src={currentImage.src}
+            src={currentImage.lightboxSrc || currentImage.src}
             alt={currentImage.alt}
             className="object-contain max-h-[80vh] max-w-[90vw] md:max-h-[85vh] md:max-w-[85vw]"
           />
@@ -115,7 +116,8 @@ const LightboxModal: React.FC<LightboxModalProps> = ({
           />
         </>
       )}
-    </div>
+    </div>,
+    document.body
   );
 };
 

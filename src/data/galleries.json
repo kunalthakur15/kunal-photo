@@ -1,0 +1,179 @@
+{
+  "galleries": [
+    {
+      "id": 1,
+      "name": "Australia",
+      "images": [
+        { "id": "australia-1.jpg", "src": "Galleries/Australia/australia-1.jpg", "name": "australia-1.jpg", "alt": "Photography by Kunal - Australia 1" },
+        { "id": "australia-2.jpg", "src": "Galleries/Australia/australia-2.jpg", "name": "australia-2.jpg", "alt": "Photography by Kunal - Australia 2" },
+        { "id": "australia-3.jpg", "src": "Galleries/Australia/australia-3.jpg", "name": "australia-3.jpg", "alt": "Photography by Kunal - Australia 3" },
+        { "id": "australia-4.jpg", "src": "Galleries/Australia/australia-4.jpg", "name": "australia-4.jpg", "alt": "Photography by Kunal - Australia 4" },
+        { "id": "australia-5.jpg", "src": "Galleries/Australia/australia-5.jpg", "name": "australia-5.jpg", "alt": "Photography by Kunal - Australia 5" },
+        { "id": "australia-6.jpg", "src": "Galleries/Australia/australia-6.jpg", "name": "australia-6.jpg", "alt": "Photography by Kunal - Australia 6" },
+        { "id": "australia-7.jpg", "src": "Galleries/Australia/australia-7.jpg", "name": "australia-7.jpg", "alt": "Photography by Kunal - Australia 7" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bali",
+      "images": [
+        { "id": "bali-1.jpg", "src": "Galleries/Bali/bali-1.jpg", "name": "bali-1.jpg", "alt": "Photography by Kunal - Bali 1" },
+        { "id": "bali-2.jpg", "src": "Galleries/Bali/bali-2.jpg", "name": "bali-2.jpg", "alt": "Photography by Kunal - Bali 2" },
+        { "id": "bali-3.jpg", "src": "Galleries/Bali/bali-3.jpg", "name": "bali-3.jpg", "alt": "Photography by Kunal - Bali 3" },
+        { "id": "bali-4.jpg", "src": "Galleries/Bali/bali-4.jpg", "name": "bali-4.jpg", "alt": "Photography by Kunal - Bali 4" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Brazil",
+      "images": [
+        { "id": "brazil-1.jpg", "src": "Galleries/Brazil/brazil-1.jpg", "name": "brazil-1.jpg", "alt": "Photography by Kunal - Brazil 1" },
+        { "id": "brazil-2.jpg", "src": "Galleries/Brazil/brazil-2.jpg", "name": "brazil-2.jpg", "alt": "Photography by Kunal - Brazil 2" },
+        { "id": "brazil-3.jpg", "src": "Galleries/Brazil/brazil-3.jpg", "name": "brazil-3.jpg", "alt": "Photography by Kunal - Brazil 3" },
+        { "id": "brazil-4.jpg", "src": "Galleries/Brazil/brazil-4.jpg", "name": "brazil-4.jpg", "alt": "Photography by Kunal - Brazil 4" },
+        { "id": "brazil-5.jpg", "src": "Galleries/Brazil/brazil-5.jpg", "name": "brazil-5.jpg", "alt": "Photography by Kunal - Brazil 5" },
+        { "id": "brazil-6.jpg", "src": "Galleries/Brazil/brazil-6.jpg", "name": "brazil-6.jpg", "alt": "Photography by Kunal - Brazil 6" },
+        { "id": "brazil-7.jpg", "src": "Galleries/Brazil/brazil-7.jpg", "name": "brazil-7.jpg", "alt": "Photography by Kunal - Brazil 7" },
+        { "id": "brazil-8.jpg", "src": "Galleries/Brazil/brazil-8.jpg", "name": "brazil-8.jpg", "alt": "Photography by Kunal - Brazil 8" },
+        { "id": "brazil-9.jpg", "src": "Galleries/Brazil/brazil-9.jpg", "name": "brazil-9.jpg", "alt": "Photography by Kunal - Brazil 9" },
+        { "id": "brazil-10.jpg", "src": "Galleries/Brazil/brazil-10.jpg", "name": "brazil-10.jpg", "alt": "Photography by Kunal - Brazil 10" },
+        { "id": "brazil-11.jpg", "src": "Galleries/Brazil/brazil-11.jpg", "name": "brazil-11.jpg", "alt": "Photography by Kunal - Brazil 11" },
+        { "id": "brazil-12.jpg", "src": "Galleries/Brazil/brazil-12.jpg", "name": "brazil-12.jpg", "alt": "Photography by Kunal - Brazil 12" },
+        { "id": "brazil-13.jpg", "src": "Galleries/Brazil/brazil-13.jpg", "name": "brazil-13.jpg", "alt": "Photography by Kunal - Brazil 13" },
+        { "id": "brazil-14.jpg", "src": "Galleries/Brazil/brazil-14.jpg", "name": "brazil-14.jpg", "alt": "Photography by Kunal - Brazil 14" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Egypt",
+      "images": [
+        { "id": "egypt-1.jpg", "src": "Galleries/Egypt/egypt-1.jpg", "name": "egypt-1.jpg", "alt": "Photography by Kunal - Egypt 1" },
+        { "id": "egypt-2.jpg", "src": "Galleries/Egypt/egypt-2.jpg", "name": "egypt-2.jpg", "alt": "Photography by Kunal - Egypt 2" },
+        { "id": "egypt-3.jpg", "src": "Galleries/Egypt/egypt-3.jpg", "name": "egypt-3.jpg", "alt": "Photography by Kunal - Egypt 3" },
+        { "id": "egypt-4.jpg", "src": "Galleries/Egypt/egypt-4.jpg", "name": "egypt-4.jpg", "alt": "Photography by Kunal - Egypt 4" },
+        { "id": "egypt-5.jpg", "src": "Galleries/Egypt/egypt-5.jpg", "name": "egypt-5.jpg", "alt": "Photography by Kunal - Egypt 5" },
+        { "id": "egypt-6.jpg", "src": "Galleries/Egypt/egypt-6.jpg", "name": "egypt-6.jpg", "alt": "Photography by Kunal - Egypt 6" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Hongkong",
+      "images": [
+        { "id": "hongkong-1.jpg", "src": "Galleries/Hongkong/hongkong-1.jpg", "name": "hongkong-1.jpg", "alt": "Photography by Kunal - Hongkong 1" },
+        { "id": "hongkong-2.jpg", "src": "Galleries/Hongkong/hongkong-2.jpg", "name": "hongkong-2.jpg", "alt": "Photography by Kunal - Hongkong 2" }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Macau",
+      "images": [
+        { "id": "macau-1.jpg", "src": "Galleries/Macau/macau-1.jpg", "name": "macau-1.jpg", "alt": "Photography by Kunal - Macau 1" },
+        { "id": "macau-2.jpg", "src": "Galleries/Macau/macau-2.jpg", "name": "macau-2.jpg", "alt": "Photography by Kunal - Macau 2" },
+        { "id": "macau-3.jpg", "src": "Galleries/Macau/macau-3.jpg", "name": "macau-3.jpg", "alt": "Photography by Kunal - Macau 3" },
+        { "id": "macau-4.jpg", "src": "Galleries/Macau/macau-4.jpg", "name": "macau-4.jpg", "alt": "Photography by Kunal - Macau 4" },
+        { "id": "macau-5.jpg", "src": "Galleries/Macau/macau-5.jpg", "name": "macau-5.jpg", "alt": "Photography by Kunal - Macau 5" }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Maldives",
+      "images": [
+        { "id": "maldives-1.jpg", "src": "Galleries/Maldives/maldives-1.jpg", "name": "maldives-1.jpg", "alt": "Photography by Kunal - Maldives 1" },
+        { "id": "maldives-2.jpg", "src": "Galleries/Maldives/maldives-2.jpg", "name": "maldives-2.jpg", "alt": "Photography by Kunal - Maldives 2" },
+        { "id": "maldives-3.jpg", "src": "Galleries/Maldives/maldives-3.jpg", "name": "maldives-3.jpg", "alt": "Photography by Kunal - Maldives 3" },
+        { "id": "maldives-4.jpg", "src": "Galleries/Maldives/maldives-4.jpg", "name": "maldives-4.jpg", "alt": "Photography by Kunal - Maldives 4" },
+        { "id": "maldives-5.jpg", "src": "Galleries/Maldives/maldives-5.jpg", "name": "maldives-5.jpg", "alt": "Photography by Kunal - Maldives 5" }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Paris",
+      "images": [
+        { "id": "paris-1.jpg", "src": "Galleries/Paris/paris-1.jpg", "name": "paris-1.jpg", "alt": "Photography by Kunal - Paris 1" },
+        { "id": "paris-2.jpg", "src": "Galleries/Paris/paris-2.jpg", "name": "paris-2.jpg", "alt": "Photography by Kunal - Paris 2" },
+        { "id": "paris-3.jpg", "src": "Galleries/Paris/paris-3.jpg", "name": "paris-3.jpg", "alt": "Photography by Kunal - Paris 3" },
+        { "id": "paris-4.jpg", "src": "Galleries/Paris/paris-4.jpg", "name": "paris-4.jpg", "alt": "Photography by Kunal - Paris 4" },
+        { "id": "paris-5.jpg", "src": "Galleries/Paris/paris-5.jpg", "name": "paris-5.jpg", "alt": "Photography by Kunal - Paris 5" },
+        { "id": "paris-6.jpg", "src": "Galleries/Paris/paris-6.jpg", "name": "paris-6.jpg", "alt": "Photography by Kunal - Paris 6" }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Prague",
+      "images": [
+        { "id": "prague-1.jpg", "src": "Galleries/Prague/prague-1.jpg", "name": "prague-1.jpg", "alt": "Photography by Kunal - Prague 1" },
+        { "id": "prague-2.jpg", "src": "Galleries/Prague/prague-2.jpg", "name": "prague-2.jpg", "alt": "Photography by Kunal - Prague 2" },
+        { "id": "prague-3.jpg", "src": "Galleries/Prague/prague-3.jpg", "name": "prague-3.jpg", "alt": "Photography by Kunal - Prague 3" },
+        { "id": "prague-4.jpg", "src": "Galleries/Prague/prague-4.jpg", "name": "prague-4.jpg", "alt": "Photography by Kunal - Prague 4" },
+        { "id": "prague-5.jpg", "src": "Galleries/Prague/prague-5.jpg", "name": "prague-5.jpg", "alt": "Photography by Kunal - Prague 5" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Singapore",
+      "images": [
+        { "id": "singapore-1.jpg", "src": "Galleries/Singapore/singapore-1.jpg", "name": "singapore-1.jpg", "alt": "Photography by Kunal - Singapore 1" },
+        { "id": "singapore-2.jpg", "src": "Galleries/Singapore/singapore-2.jpg", "name": "singapore-2.jpg", "alt": "Photography by Kunal - Singapore 2" },
+        { "id": "singapore-3.jpg", "src": "Galleries/Singapore/singapore-3.jpg", "name": "singapore-3.jpg", "alt": "Photography by Kunal - Singapore 3" },
+        { "id": "singapore-4.jpg", "src": "Galleries/Singapore/singapore-4.jpg", "name": "singapore-4.jpg", "alt": "Photography by Kunal - Singapore 4" },
+        { "id": "singapore-5.jpg", "src": "Galleries/Singapore/singapore-5.jpg", "name": "singapore-5.jpg", "alt": "Photography by Kunal - Singapore 5" },
+        { "id": "singapore-6.jpg", "src": "Galleries/Singapore/singapore-6.jpg", "name": "singapore-6.jpg", "alt": "Photography by Kunal - Singapore 6" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Switzerland",
+      "images": [
+        { "id": "switzerland-1.jpg", "src": "Galleries/Switzerland/switzerland-1.jpg", "name": "switzerland-1.jpg", "alt": "Photography by Kunal - Switzerland 1" },
+        { "id": "switzerland-2.jpg", "src": "Galleries/Switzerland/switzerland-2.jpg", "name": "switzerland-2.jpg", "alt": "Photography by Kunal - Switzerland 2" },
+        { "id": "switzerland-3.jpg", "src": "Galleries/Switzerland/switzerland-3.jpg", "name": "switzerland-3.jpg", "alt": "Photography by Kunal - Switzerland 3" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Thailand",
+      "images": [
+        { "id": "thailand-1.jpg", "src": "Galleries/Thailand/thailand-1.jpg", "name": "thailand-1.jpg", "alt": "Photography by Kunal - Thailand 1" },
+        { "id": "thailand-2.jpg", "src": "Galleries/Thailand/thailand-2.jpg", "name": "thailand-2.jpg", "alt": "Photography by Kunal - Thailand 2" },
+        { "id": "thailand-3.jpg", "src": "Galleries/Thailand/thailand-3.jpg", "name": "thailand-3.jpg", "alt": "Photography by Kunal - Thailand 3" },
+        { "id": "thailand-4.jpg", "src": "Galleries/Thailand/thailand-4.jpg", "name": "thailand-4.jpg", "alt": "Photography by Kunal - Thailand 4" },
+        { "id": "thailand-5.jpg", "src": "Galleries/Thailand/thailand-5.jpg", "name": "thailand-5.jpg", "alt": "Photography by Kunal - Thailand 5" },
+        { "id": "thailand-6.jpg", "src": "Galleries/Thailand/thailand-6.jpg", "name": "thailand-6.jpg", "alt": "Photography by Kunal - Thailand 6" }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Turkey",
+      "images": [
+        { "id": "turkey-1.jpg", "src": "Galleries/Turkey/turkey-1.jpg", "name": "turkey-1.jpg", "alt": "Photography by Kunal - Turkey 1" },
+        { "id": "turkey-2.jpg", "src": "Galleries/Turkey/turkey-2.jpg", "name": "turkey-2.jpg", "alt": "Photography by Kunal - Turkey 2" },
+        { "id": "turkey-3.jpg", "src": "Galleries/Turkey/turkey-3.jpg", "name": "turkey-3.jpg", "alt": "Photography by Kunal - Turkey 3" },
+        { "id": "turkey-4.jpg", "src": "Galleries/Turkey/turkey-4.jpg", "name": "turkey-4.jpg", "alt": "Photography by Kunal - Turkey 4" },
+        { "id": "turkey-5.jpg", "src": "Galleries/Turkey/turkey-5.jpg", "name": "turkey-5.jpg", "alt": "Photography by Kunal - Turkey 5" },
+        { "id": "turkey-6.jpg", "src": "Galleries/Turkey/turkey-6.jpg", "name": "turkey-6.jpg", "alt": "Photography by Kunal - Turkey 6" },
+        { "id": "turkey-7.jpg", "src": "Galleries/Turkey/turkey-7.jpg", "name": "turkey-7.jpg", "alt": "Photography by Kunal - Turkey 7" }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "UK",
+      "images": [
+        { "id": "uk-1.jpg", "src": "Galleries/UK/uk-1.jpg", "name": "uk-1.jpg", "alt": "Photography by Kunal - UK 1" },
+        { "id": "uk-2.jpg", "src": "Galleries/UK/uk-2.jpg", "name": "uk-2.jpg", "alt": "Photography by Kunal - UK 2" },
+        { "id": "uk-3.jpg", "src": "Galleries/UK/uk-3.jpg", "name": "uk-3.jpg", "alt": "Photography by Kunal - UK 3" },
+        { "id": "uk-4.jpg", "src": "Galleries/UK/uk-4.jpg", "name": "uk-4.jpg", "alt": "Photography by Kunal - UK 4" },
+        { "id": "uk-5.jpg", "src": "Galleries/UK/uk-5.jpg", "name": "uk-5.jpg", "alt": "Photography by Kunal - UK 5" },
+        { "id": "uk-6.jpg", "src": "Galleries/UK/uk-6.jpg", "name": "uk-6.jpg", "alt": "Photography by Kunal - UK 6" }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Vienna",
+      "images": [
+        { "id": "vienna-1.jpg", "src": "Galleries/Vienna/vienna-1.jpg", "name": "vienna-1.jpg", "alt": "Photography by Kunal - Vienna 1" },
+        { "id": "vienna-2.jpg", "src": "Galleries/Vienna/vienna-2.jpg", "name": "vienna-2.jpg", "alt": "Photography by Kunal - Vienna 2" },
+        { "id": "vienna-3.jpg", "src": "Galleries/Vienna/vienna-3.jpg", "name": "vienna-3.jpg", "alt": "Photography by Kunal - Vienna 3" }
+      ]
+    }
+  ]
+} 

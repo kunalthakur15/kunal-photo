@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +9,7 @@ import AboutMe from "./pages/AboutMe";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import GalleryPage from "./components/GalleryPage";
+import GalleryDetail from './components/GalleryDetail';
 import { getRandomAnimation } from "./utils/transitions";
 
 const queryClient = new QueryClient();
@@ -50,7 +50,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/gallery/:categoryId" element={<GalleryPage />} />
+        <Route path="/gallery/:id" element={<GalleryDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </PageTransition>

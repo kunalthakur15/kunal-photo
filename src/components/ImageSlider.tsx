@@ -1,39 +1,87 @@
-
 import React, { useState, useEffect } from "react";
-import { sliderImages } from "../data/galleryData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
+import { fetchGoogleDriveImages } from "../lib/googleDrive";
+import { GalleryImage } from "../data/galleryData";
 
 const ImageSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [images, setImages] = useState<GalleryImage[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const isMobile = useIsMobile();
+
+  // Fetch images from Google Drive
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const driveImages = await fetchGoogleDriveImages();
+        console.log('Loaded images:', driveImages); // Debug log
+        setImages(driveImages);
+        setError(null);
+      } catch (error) {
+        console.error("Error loading images:", error);
+        setError("Failed to load images. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadImages();
+  }, []);
 
   // Auto-advance the slider
   useEffect(() => {
+    if (images.length === 0) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? sliderImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  if (isLoading) {
+    return (
+      <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden bg-gray-100 flex items-center justify-center">
+        <div className="text-gray-500">Loading images...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden bg-gray-100 flex items-center justify-center">
+        <div className="text-red-500">{error}</div>
+      </div>
+    );
+  }
+
+  if (images.length === 0) {
+    return (
+      <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden bg-gray-100 flex items-center justify-center">
+        <div className="text-gray-500">No images available</div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden">
-      {sliderImages.map((image, index) => (
+      {images.map((image, index) => (
         <div
           key={image.id}
           className={`slider-image ${
@@ -44,6 +92,11 @@ const ImageSlider: React.FC = () => {
             src={image.src}
             alt={image.alt}
             className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error(`Failed to load image ${image.id}:`, e);
+              const img = e.target as HTMLImageElement;
+              img.src = 'https://via.placeholder.com/1200x800?text=Image+Not+Found';
+            }}
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
@@ -68,11 +121,11 @@ const ImageSlider: React.FC = () => {
       
       <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent text-white z-10">
         <h1 className="font-allura text-3xl sm:text-5xl md:text-6xl font-bold mb-1 sm:mb-2">Capturing Moments</h1>
-        <p className="text-base sm:text-xl opacity-90">Explore breathtaking photography from around the world</p>
+        <p className="text-base sm:text-xl opacity-90">Explore the world through my pictures from around the world</p>
       </div>
 
       <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 flex justify-center gap-1 sm:gap-2">
-        {sliderImages.map((_, index) => (
+        {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
