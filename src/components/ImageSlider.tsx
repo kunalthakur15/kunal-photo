@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
-import { fetchGoogleDriveImages } from "../lib/googleDrive";
 import { GalleryImage } from "../data/galleryData";
 
 const ImageSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const isMobile = useIsMobile();
 
-  // Fetch images from Google Drive
+  // Load images from Main Slider folder
   useEffect(() => {
-    const loadImages = async () => {
+    const loadImages = () => {
       try {
-        const driveImages = await fetchGoogleDriveImages();
-        console.log('Loaded images:', driveImages); // Debug log
-        setImages(driveImages);
-        setError(null);
+        // Create array of 9 slider images
+        const sliderImages: GalleryImage[] = Array.from({ length: 9 }, (_, i) => ({
+          id: i + 1,
+          src: `./Main Slider/slider-${i + 1}.jpg`,
+          alt: `Slider Image ${i + 1}`,
+          width: 1200,
+          height: 800
+        }));
+        
+        setImages(sliderImages);
       } catch (error) {
         console.error("Error loading images:", error);
-        setError("Failed to load images. Please try again later.");
       } finally {
         setIsLoading(false);
       }
@@ -59,14 +62,6 @@ const ImageSlider: React.FC = () => {
     return (
       <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden bg-gray-100 flex items-center justify-center">
         <div className="text-gray-500">Loading images...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="relative w-full h-[50vh] sm:h-[80vh] overflow-hidden bg-gray-100 flex items-center justify-center">
-        <div className="text-red-500">{error}</div>
       </div>
     );
   }

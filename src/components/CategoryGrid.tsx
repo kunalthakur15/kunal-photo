@@ -1,51 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getGalleryImages } from "../utils/galleryUtils";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const CategoryGrid: React.FC = () => {
+  const isMobile = useIsMobile();
   const galleries = getGalleryImages();
-  return (
-    <section className="max-w-7xl mx-auto px-4 py-8 sm:py-16">
-      <div className="text-center mb-8 sm:mb-12">
-        <h2 className="font-allura text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Gallery Collections</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-2">
-          Explore the world through my pictures from around the world
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {galleries.map((gallery) => (
-          <Link 
-            to={`/gallery/${gallery.id}`} 
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {galleries.map((gallery, index) => (
+          <Link
             key={gallery.id}
-            className="gallery-item group"
+            to={`/gallery/${gallery.id}`}
+            className="group relative aspect-[4/3] overflow-hidden rounded-lg"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+            {/* Background Image */}
+            {gallery.images.length > 0 && (
               <img
-                src={
-                  gallery.images.length > 0 && gallery.images[0].src
-                    ? `/${gallery.images[0].src}`
-                    : "https://via.placeholder.com/600x400?text=No+Image"
-                }
+                src={gallery.images[0].src}
                 alt={gallery.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute top-0 left-0 right-0 bg-black/40 py-2 px-4 text-white text-xl font-allura font-bold text-center z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0">
+            )}
+            
+            {/* Top Bar - Always Visible */}
+            <div className="absolute top-0 left-0 right-0 bg-black/60 px-4 py-2 transition-opacity duration-300 group-hover:opacity-0">
+              <h3 className="text-xl font-medium text-white font-allura text-center">
                 {gallery.name}
-              </div>
-              <div className="gallery-item-overlay">
-                <div className="text-white text-center p-4 sm:p-6">
-                  <h3 className="font-allura text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">{gallery.name}</h3>
-                  <div className="mt-3 sm:mt-4 inline-block px-3 sm:px-4 py-1.5 sm:py-2 border border-white/50 rounded-full text-xs sm:text-sm font-medium hover:bg-white hover:text-black transition-colors duration-300">
-                    View Gallery
-                  </div>
-                </div>
+              </h3>
+            </div>
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
+              <div className="text-center px-4">
+                <h3 className="text-2xl sm:text-3xl font-medium text-white font-allura mb-2">
+                  {gallery.name}
+                </h3>
+                <p className="text-white/90 text-sm sm:text-base mb-4 font-montserrat">
+                  {gallery.images.length} photos
+                </p>
+                <span className="inline-block px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-md transition-colors duration-200 font-montserrat text-sm">
+                  View Gallery
+                </span>
               </div>
             </div>
           </Link>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

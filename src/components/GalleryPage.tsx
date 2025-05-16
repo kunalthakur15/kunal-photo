@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { galleryCategories } from "../data/galleryData";
+import { getGalleryImages } from "../utils/galleryUtils";
 import MasonryGallery from "./MasonryGallery";
 import LightboxModal from "./LightboxModal";
 import { ChevronLeft } from "lucide-react";
@@ -16,7 +15,7 @@ const GalleryPage: React.FC = () => {
   const isMobile = useIsMobile();
 
   // Find the gallery by id
-  const gallery = galleryCategories.find((cat) => cat.id === categoryId);
+  const gallery = getGalleryImages().find((g) => g.id === Number(categoryId));
 
   // Simulate loading state
   useEffect(() => {
@@ -87,13 +86,13 @@ const GalleryPage: React.FC = () => {
       {/* Header Banner */}
       <div 
         className="relative h-[30vh] sm:h-[40vh] bg-cover bg-center"
-        style={{ backgroundImage: `url(${gallery.coverImage})` }}
+        style={{ backgroundImage: `url(${gallery.images[0].src})` }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-playfair text-center">{gallery.title}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 font-playfair text-center">{gallery.name}</h1>
           <p className="text-base sm:text-xl opacity-90 max-w-2xl text-center font-montserrat">
-            {gallery.description}
+            {gallery.images.length} photos
           </p>
         </div>
       </div>
@@ -105,7 +104,7 @@ const GalleryPage: React.FC = () => {
           className="inline-flex items-center text-gray-700 hover:text-black transition-colors font-montserrat text-sm sm:text-base"
         >
           <ChevronLeft size={isMobile ? 16 : 20} />
-          <span>Back to collections</span>
+          <span>Back to Galleries</span>
         </Link>
       </div>
 

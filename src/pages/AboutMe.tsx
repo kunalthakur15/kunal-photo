@@ -13,7 +13,7 @@ const AboutMe: React.FC = () => {
           <div className="mb-8 sm:mb-12 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
             <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/about-me.jpg"
+                src="./about-me.jpg"
                 alt="Photographer profile" 
                 className="w-full h-auto"
               />

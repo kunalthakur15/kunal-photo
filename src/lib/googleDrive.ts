@@ -11,7 +11,7 @@ export async function fetchGoogleDriveImages(): Promise<GalleryImage[]> {
     const images: GalleryImage[] = driveImages.images.map(image => ({
       id: image.id,
       // Using the correct Google Drive direct image URL format
-      src: `https://drive.google.com/thumbnail?id=${image.fileId}&sz=w1200`,
+      src: `https://drive.google.com/uc?export=view&id=${image.fileId}`,
       alt: image.alt,
       width: 1200,
       height: 800
